@@ -37,4 +37,23 @@ class Particle {
         if (this.pos.y >= height || this.pos.y <= 0)
             this.vel.y *= -1;
     }
+
+    attractAndRepel() {
+      particles.forEach(p => {
+        if (p != this) {
+          const d = dist(p.pos.x, p.pos.y, this.pos.x, this.pos.y);
+          const velMag = 5 / (d * d);
+          let vel = createVector(this.pos.x-p.pos.x,this.pos.y-p.pos.y);
+          if (d > 30) {
+            vel.setMag(-velMag);
+            // Attraction
+          } else {
+            vel.setMag(velMag * 10);
+            // Repulsion if too close to each other
+          }
+          this.vel.add(vel);
+          this.vel.limit(2.5);
+        }
+      });
+    }
 }

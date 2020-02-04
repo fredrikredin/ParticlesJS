@@ -17,6 +17,7 @@ function draw() {
 
     particles.forEach(p => {
         p.draw();
+        p.attractAndRepel()
         p.drawConnections(particles);
     });
 }
