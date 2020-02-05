@@ -6,6 +6,8 @@ Visualization of colliding particles using [p5.js](https://p5js.org/) framework.
 
 DEMO: https://fredrikredin.github.io/ParticlesJS/
 
+### Contributors
+Thanks [jnsjknn](https://github.com/jnsjknn)!
 
 ### About p5.js
 
